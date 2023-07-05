@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5;
+  --fc-text: #295b70;
+  --ff-text: "DM Sans", sans-serif;
+  --primary-color-bg: #3f87a6;
+  --secondary-color-bg: #ebf8e1;
+  --third-color-bg: #f69d3c;
+  --general-color: #fff;
+}
+
+body {
+  background: linear-gradient(
+    0.25turn,
+    var(--primary-color-bg),
+    var(--secondary-color-bg),
+    var(--third-color-bg)
+  );
+  font-size: 1.4rem;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+body,
+button,
+input {
+  font-family: var(--ff-text);
+  color: var(--fc-text);
+}
+
+.hide {
+  display: none;
+}
+
+main {
+  background-color: var(--general-color);
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.6rem;
+  padding: 4.8rem 6.4rem 6.4rem;
+  width: min(42rem, 90%);
+  margin-top: -12rem;
+  text-align: center;
+}
+
+button {
+  background-color: var(--third-color-bg);
+  color: var(--general-color);
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 0 0.6rem 0.6rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background-color: #ffb96d;
+}
+
+/********************************
+Screen1
+*********************************/
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.4rem;
+}
+
+p {
+  opacity: 0.8;
+}
+
+form {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+input,
+button {
+  border: 0;
+  padding: 1.6rem;
+}
+
+input {
+  background-color: #5d8799;
+  color: #fff;
+  border-radius: 0.6rem 0 0 0.6rem;
+}
+
+/********************************
+Screen2
+*********************************/
+
+h2 {
+  font-size: 2.4rem;
+  font-weight: normal;
+  margin-bottom: 3.3rem;
+}
+.screen2 button {
+  border-radius: 0.6rem;
+}

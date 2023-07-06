@@ -5,12 +5,14 @@ const screen1 = document.querySelector(".screen1");
 const screen2 = document.querySelector(".screen2");
 const btnTry = document.querySelector("#btnTry");
 const btnReset = document.querySelector("#btnReset");
-let randomNumber = Math.round(Math.random() * 10);
+let randomNumberResult = Math.round(Math.random() * 10);
 let xAttempts = 1;
+  console.log(randomNumberResult, xAttempts);
+
 
 /*****************
-Events
-******************/
+ Events
+ ******************/
 
 btnTry.addEventListener("click", handleTryClick);
 btnReset.addEventListener("click", handleResetClick);
@@ -21,15 +23,20 @@ document.addEventListener("keydown", function (e) {
 });
 
 /*****************
-Functions
-******************/
+ Functions
+ ******************/
+function randomNumber() {
+  let randomNumberReset = Math.round(Math.random() * 10);
+  randomNumberResult = randomNumberReset;
+  return randomNumberResult;
+}
 
 function handleTryClick(event) {
   event.preventDefault();
-
+  
   const inputNumber = document.querySelector("#inputNumber");
-
-  if (Number(inputNumber.value) == randomNumber) {
+  
+  if (Number(inputNumber.value) == randomNumberResult) {
     toggleScreen();
     screen2.querySelector(
       "h2"
@@ -43,9 +50,8 @@ function handleTryClick(event) {
 function handleResetClick() {
   toggleScreen();
   xAttempts = 1;
-  randomNumber = Math.round(Math.random() * 10);
-  let xAttempts = 1;
-  console.log(randomNumber);
+  randomNumber();
+  console.log(randomNumberResult, xAttempts);
 }
 
 function toggleScreen() {

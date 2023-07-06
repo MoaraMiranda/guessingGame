@@ -1,6 +1,7 @@
 /*****************
  Variables
- ******************/
+******************/
+
 const screen1 = document.querySelector(".screen1");
 const screen2 = document.querySelector(".screen2");
 const btnTry = document.querySelector("#btnTry");
@@ -12,7 +13,7 @@ inputNumber.focus();
 
 /*****************
  Events
- ******************/
+******************/
 
 btnTry.addEventListener("click", handleTryClick);
 btnReset.addEventListener("click", handleResetClick);
@@ -24,7 +25,8 @@ document.addEventListener("keydown", function (e) {
 
 /*****************
  Functions
- ******************/
+******************/
+
 function randomNumber() {
   let randomNumberReset = Math.round(Math.random() * 10);
   randomNumberResult = randomNumberReset;

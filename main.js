@@ -1,14 +1,14 @@
 /*****************
-variaveis
-******************/
+ Variables
+ ******************/
 const screen1 = document.querySelector(".screen1");
 const screen2 = document.querySelector(".screen2");
 const btnTry = document.querySelector("#btnTry");
 const btnReset = document.querySelector("#btnReset");
+const inputNumber = document.querySelector("#inputNumber");
 let randomNumberResult = Math.round(Math.random() * 10);
 let xAttempts = 1;
-  console.log(randomNumberResult, xAttempts);
-
+inputNumber.focus();
 
 /*****************
  Events
@@ -33,25 +33,27 @@ function randomNumber() {
 
 function handleTryClick(event) {
   event.preventDefault();
-  
-  const inputNumber = document.querySelector("#inputNumber");
-  
+
   if (Number(inputNumber.value) == randomNumberResult) {
     toggleScreen();
     screen2.querySelector(
       "h2"
     ).innerText = `Congrats!! You guessed it in ${xAttempts} attempts`;
+    return;
   }
 
-  inputNumber.value = "";
+  inputNumber.value = "Wrong, try again!";
+  inputNumber.focus();
+  inputNumber.select();
   xAttempts++;
 }
 
 function handleResetClick() {
-  toggleScreen();
   xAttempts = 1;
+  inputNumber.focus();
+  inputNumber.value = "";
   randomNumber();
-  console.log(randomNumberResult, xAttempts);
+  toggleScreen();
 }
 
 function toggleScreen() {
